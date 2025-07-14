@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="689.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyProfileController">
+    <left>
+        <VBox prefWidth="220" style="-fx-background-color: #2d2f4a; -fx-padding: 20;">
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20 0 10 0;">
+                <StackPane style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 16;">
+                    <VBox alignment="CENTER" spacing="6">
+                        <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="👤" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="SkyTrack" />
+                    </VBox>
+                </StackPane>
+            </VBox>
+            <VBox spacing="8" style="-fx-padding: 0 0 0 0;">
+                <Button onAction="#showHome" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🏠" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Home" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showBookFlight" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="✈" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Book Flight" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showMyBookings" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🎫" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="My Bookings" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showProfile" style="-fx-background-color: #fff;" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #2d2f4a;" text="👤" />
+                            <Label style="-fx-text-fill: #2d2f4a; -fx-font-size: 14px; -fx-font-weight: bold;" text="My Profile" />
+                        </VBox>
+                    </graphic>
+                </Button>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="621.0" prefWidth="670.0" spacing="20" style="-fx-background-color: #f7f8fa; -fx-padding: 30;">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="My Profile" />
+            <GridPane hgap="30" style="-fx-background-color: white; -fx-padding: 32; -fx-background-radius: 16; -fx-max-width: 500;" vgap="18">
+                <columnConstraints>
+                    <ColumnConstraints halignment="LEFT" minWidth="100" prefWidth="120" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="fnameField" editable="false" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a; -fx-background-color: transparent; -fx-border-color: transparent; -fx-alignment: center-left;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="lnameField" editable="false" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a; -fx-background-color: transparent; -fx-border-color: transparent; -fx-alignment: center-left;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="emailField" editable="false" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a; -fx-background-color: transparent; -fx-border-color: transparent; -fx-alignment: center-left;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Passport No:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="passportNoField" editable="false" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a; -fx-background-color: transparent; -fx-border-color: transparent; -fx-alignment: center-left;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Contact No:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="contactNoField" editable="false" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a; -fx-background-color: transparent; -fx-border-color: transparent; -fx-alignment: center-left;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Credit Card:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="creditCardField" editable="false" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a; -fx-background-color: transparent; -fx-border-color: transparent; -fx-alignment: center-left;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 20 0 0 0;" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <Button fx:id="saveButton" minWidth="-Infinity" onAction="#handleSave" prefWidth="140" style="-fx-background-color: #6a4df4; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 16; -fx-padding: 8 24;" text="Save Changes" visible="false" />
+                    <Button fx:id="cancelButton" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleCancel" prefWidth="100" style="-fx-background-color: #ff5c5c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 16; -fx-padding: 8 24;" text="Cancel" visible="false" />
+                    <Button fx:id="editButton" minWidth="-Infinity" onAction="#handleEdit" prefHeight="36.0" prefWidth="137.0" style="-fx-background-color: #6a4df4; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 16; -fx-padding: 8 24;" text="Edit Profile" />
+                </HBox>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+        </VBox>
+    </center>
+    <top>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #fff; -fx-padding: 10 30 10 0;">
+            <TextField fx:id="globalSearchField" promptText="Search..." style="-fx-pref-width: 220; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #e6eaff; -fx-background-color: #f7f8fa;" />
+            <Button fx:id="settingsButton" style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-text-fill: #6a4df4;" text="⚙" />
+            <Button onAction="#handleSignOut" style="-fx-background-color: #ff5c5c; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 16; -fx-padding: 8 24;" text="Sign Out" />
+        </HBox>
+    </top>
+</BorderPane>

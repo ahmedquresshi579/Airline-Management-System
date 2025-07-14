@@ -1,0 +1,145 @@
+.form-title {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3b2fa0;
+    -fx-padding: 0 0 20 0;
+}
+
+.text-field, .password-field {
+    -fx-pref-width: 260px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8 12 8 12;
+    -fx-border-color: #6a4df4;
+    -fx-border-width: 2px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3b2fa0;
+    -fx-effect: dropshadow(three-pass-box, #6a4df4, 4, 0, 0, 0);
+}
+
+.primary-btn {
+    -fx-background-color: #6a4df4;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 8 24 8 24;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #3b2fa0;
+}
+
+.secondary-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #6a4df4;
+    -fx-text-fill: #6a4df4;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 8 24 8 24;
+    -fx-cursor: hand;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: #f3f0ff;
+}
+
+.label {
+    -fx-font-size: 13px;
+}
+
+.combo-box {
+    -fx-pref-width: 260px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #6a4df4;
+    -fx-padding: 8 12 8 12;
+    -fx-background-color: #fff;
+}
+
+.combo-box .list-cell {
+    -fx-font-size: 14px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3b2fa0;
+    -fx-effect: dropshadow(three-pass-box, #6a4df4, 4, 0, 0, 0);
+}
+
+.skytrack-label {
+    -fx-font-family: "Brush Script MT", "Comic Sans MS", cursive, sans-serif;
+    -fx-font-size: 50px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Admin Dashboard Sidebar */
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+}
+.sidebar-btn:hover {
+    -fx-background-color: #3b2fa0;
+}
+
+/* Mockup Button */
+.mockup-btn {
+    -fx-background-color: #f7f8fa;
+    -fx-text-fill: #6a4df4;
+    -fx-background-radius: 8px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-pref-width: 32px;
+    -fx-pref-height: 32px;
+}
+.mockup-btn:hover {
+    -fx-background-color: #e6eaff;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, #e6eaff, 8, 0, 0, 0);
+}
+
+/* Top Bar */
+.top-bar {
+    -fx-background-color: #fff;
+    -fx-padding: 10 30 10 0;
+    -fx-effect: dropshadow(three-pass-box, #e6eaff, 4, 0, 0, 0);
+}
+
+/* General */
+.dashboard-label-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d2f4a;
+}
+.dashboard-label-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6a6a6a;
+}
+
+.recent-flight-btn {
+    -fx-background-color: #6a4df4;
+    -fx-background-radius: 16;
+    -fx-padding: 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, #3b2fa0, 8, 0, 0, 0);
+}
+.recent-flight-btn:hover {
+    -fx-background-color: #3b2fa0;
+    -fx-effect: dropshadow(three-pass-box, #6a4df4, 16, 0, 0, 0);
+} 

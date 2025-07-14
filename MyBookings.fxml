@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="689.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyBookingsController">
+    <left>
+        <VBox prefWidth="220" style="-fx-background-color: #2d2f4a; -fx-padding: 20;">
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20 0 10 0;">
+                <StackPane style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 16;">
+                    <VBox alignment="CENTER" spacing="6">
+                        <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="👤" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="SkyTrack" />
+                    </VBox>
+                </StackPane>
+            </VBox>
+            <VBox spacing="8" style="-fx-padding: 0 0 0 0;">
+                <Button onAction="#showHome" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🏠" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Home" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showBookFlight" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="✈" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Book Flight" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showMyBookings" style="-fx-background-color: #fff;" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #2d2f4a;" text="🎫" />
+                            <Label style="-fx-text-fill: #2d2f4a; -fx-font-size: 14px; -fx-font-weight: bold;" text="My Bookings" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showProfile" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="👤" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="My Profile" />
+                        </VBox>
+                    </graphic>
+                </Button>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+    <center>
+        <VBox prefHeight="621.0" prefWidth="717.0" spacing="20" style="-fx-background-color: #f7f8fa; -fx-padding: 30;">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="My Bookings" />
+            <ScrollPane fitToWidth="false" fitToHeight="true" prefHeight="300">
+                <content>
+                    <TableView fx:id="bookingsTable" prefHeight="300">
+                        <columns>
+                            <TableColumn fx:id="ticketIdColumn" text="Ticket ID" prefWidth="80" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="flightIdColumn" text="Flight ID" prefWidth="80" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="fromColumn" text="From" prefWidth="120" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="toColumn" text="To" prefWidth="120" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="departureTimeColumn" text="Departure Time" prefWidth="120" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="arrivalTimeColumn" text="Arrival Time" prefWidth="120" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="seatNoColumn" text="Seat No" prefWidth="80" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="bookingDateColumn" text="Booking Date" prefWidth="120" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100" style="-fx-alignment: CENTER;" />
+                            <TableColumn fx:id="actionColumn" text="Action" prefWidth="100" style="-fx-alignment: CENTER;" />
+                        </columns>
+                    </TableView>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+    <top>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #fff; -fx-padding: 10 30 10 0;">
+            <TextField fx:id="globalSearchField" promptText="Search..." style="-fx-pref-width: 220; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #e6eaff; -fx-background-color: #f7f8fa;" />
+            <Button fx:id="settingsButton" style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-text-fill: #6a4df4;" text="⚙" />
+            <Button onAction="#handleSignOut" style="-fx-background-color: #ff5c5c; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 16; -fx-padding: 8 24;" text="Sign Out" />
+        </HBox>
+    </top>
+</BorderPane> 

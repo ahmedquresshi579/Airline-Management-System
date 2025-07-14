@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PassengerDashboardController">
+    <left>
+        <VBox prefWidth="220" style="-fx-background-color: #2d2f4a; -fx-padding: 20;">
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20 0 10 0;">
+                <StackPane style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 16;">
+                    <VBox alignment="CENTER" spacing="6">
+                        <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="👤" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="SkyTrack" />
+                    </VBox>
+                </StackPane>
+            </VBox>
+            <VBox spacing="8" style="-fx-padding: 0 0 0 0;">
+                <Button onAction="#showHome" style="-fx-background-color: #fff;" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #2d2f4a;" text="🏠" />
+                            <Label style="-fx-text-fill: #2d2f4a; -fx-font-size: 14px; -fx-font-weight: bold;" text="Home" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showBookFlight" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="306.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="✈" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Book Flight" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showMyBookings" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="294.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🎫" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="My Bookings" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showProfile" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="270.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="👤" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="My Profile" />
+                        </VBox>
+                    </graphic>
+                </Button>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" style="-fx-padding: 30 0 0 0;" />
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color:transparent;">
+            <VBox prefHeight="608.0" prefWidth="715.0" style="-fx-background-color: #f7f8fa; -fx-padding: 30;">
+                <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 0 0 20 0;">
+                    <Label fx:id="passengerNameLabel" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Hello!" />
+                </HBox>
+                <HBox prefHeight="96.0" prefWidth="633.0" spacing="20" style="-fx-padding: 0 0 20 0;">
+                    <VBox style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 20;" minWidth="180">
+                        <Label fx:id="flightRouteLabel"
+                               style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;"
+                               wrapText="true" />
+                        <Label fx:id="flightDateLabel" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                        <ImageView fitHeight="101.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@resources/logo.png" />
+                            </image>
+                        </ImageView>
+                    </VBox>
+                    <VBox layoutX="220.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="193.0" prefWidth="172.0" style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 20; -fx-pref-width: 180;">
+                        <Label fx:id="weatherTempLabel" style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;" text="22° C" />
+                        <Label fx:id="latestDestinationLabel" style="-fx-text-fill: white; -fx-font-size: 16px;" text="-" />
+                        <ImageView fitHeight="99.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@resources/sun.png" />
+                            </image>
+                        </ImageView>
+                    </VBox>
+                    <VBox fx:id="recentBookingCard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="193.0" prefWidth="172.0" style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 20; -fx-pref-width: 180;">
+                        <Label style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;" text="TrainTrack" />
+                  <Label fx:id="totalBookingsLabel1" style="-fx-text-fill: white;" text="Want to travel by road?" />
+                  <ImageView fitHeight="99.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/train.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                    </VBox>
+                </HBox>
+                <HBox spacing="20">
+                    <VBox spacing="10" style="-fx-background-color: #fff; -fx-background-radius: 16; -fx-padding: 20; -fx-pref-width: 400;">
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Recent Bookings" />
+                        <TableView fx:id="recentBookingsTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="flightIdColumn" text="Flight ID" />
+                                <TableColumn fx:id="fromColumn" text="From" />
+                                <TableColumn fx:id="toColumn" text="To" />
+                                <TableColumn fx:id="dateColumn" text="Date" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                    <VBox alignment="CENTER" style="-fx-background-color: #e6eaff; -fx-background-radius: 16; -fx-padding: 20; -fx-pref-width: 220;">
+                  <children>
+                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@resources/green.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+    <top>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #fff; -fx-padding: 10 30 10 0;">
+            <TextField fx:id="searchField" promptText="Search flights..." style="-fx-pref-width: 220; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #e6eaff; -fx-background-color: #f7f8fa;" />
+            <Button fx:id="settingsButton" style="-fx-background-color: transparent; -fx-font-size: 22px; -fx-text-fill: #6a4df4;" text="⚙️">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Button>
+            <Button fx:id="signOutButton" onAction="#handleSignOut" prefHeight="38.0" prefWidth="92.0" style="-fx-background-color: #ff4d4f; -fx-text-fill: #fff; -fx-font-size: 14px; -fx-background-radius: 16; -fx-padding: 0 16 0 16;" text="Sign Out">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </top>
+</BorderPane>

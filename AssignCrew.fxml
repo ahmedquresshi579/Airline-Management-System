@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AssignCrewController">
+    <left>
+        <VBox prefWidth="220" style="-fx-background-color: #2d2f4a; -fx-padding: 20;">
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20 0 10 0;">
+                <StackPane style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 16;">
+                    <VBox alignment="CENTER" spacing="6">
+                        <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="💻" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="SkyTrack" />
+                    </VBox>
+                </StackPane>
+            </VBox>
+            <VBox spacing="8" style="-fx-padding: 0 0 0 0;">
+                <Button onAction="#showHome" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🏠" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Home" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showAddFlight" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="294.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="✈+" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Add Flight" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showEditFlight" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="306.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="📝" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Edit Flight" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showViewPassengers" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="270.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="👤" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Passengers" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showAddCrew" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="274.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🧑‍✈️" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Add and Assign Crew" />
+                        </VBox>
+                    </graphic>
+                </Button>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" style="-fx-padding: 30 0 0 0;" />
+        </VBox>
+    </left>
+    <top>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #fff; -fx-padding: 10 30 10 0;">
+            <TextField fx:id="globalSearchField" promptText="Search..." style="-fx-pref-width: 220; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #e6eaff; -fx-background-color: #f7f8fa;" />
+            <Button fx:id="settingsButton" style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-text-fill: #6a4df4;" text="⚙" />
+        </HBox>
+    </top>
+   <right>
+        <VBox prefHeight="608.0" prefWidth="715.0" style="-fx-background-color: #f7f8fa; -fx-padding: 30;" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 0 0 20 0;">
+                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Assign Crew to Flight" />
+            </HBox>
+            <!-- Flight Search -->
+            <VBox spacing="10" style="-fx-background-color: #fff; -fx-background-radius: 16; -fx-padding: 20;">
+                <HBox spacing="10">
+                    <TextField fx:id="flightIdSearchField" promptText="Enter Flight ID" />
+                    <Button onAction="#handleFlightSearch" prefHeight="39.0" prefWidth="104.0" style="-fx-background-color: #6a4df4; -fx-text-fill: white; -fx-background-radius: 16;" text="Search Flight" />
+                </HBox>
+                <HBox fx:id="flightDetailsBox" spacing="20" visible="false">
+                    <Label fx:id="flightDetailsLabel" style="-fx-text-fill: #2d2f4a; -fx-font-weight: bold;" />
+                </HBox>
+            </VBox>
+            <!-- Crew Search -->
+            <VBox spacing="10" style="-fx-background-color: #fff; -fx-background-radius: 16; -fx-padding: 20; -fx-margin: 10 0 0 0;">
+                <HBox spacing="10">
+                    <TextField fx:id="crewIdSearchField" promptText="Enter Crew ID" />
+                    <Button onAction="#handleCrewSearch" prefHeight="39.0" prefWidth="107.0" style="-fx-background-color: #6a4df4; -fx-text-fill: white; -fx-background-radius: 16;" text="Search Crew" />
+                </HBox>
+                <HBox fx:id="crewDetailsBox" spacing="20" visible="false">
+                    <Label fx:id="crewDetailsLabel" style="-fx-text-fill: #2d2f4a; -fx-font-weight: bold;" />
+                </HBox>
+            </VBox>
+            <!-- Assignment Form -->
+            <VBox spacing="20" style="-fx-background-color: #fff; -fx-background-radius: 16; -fx-padding: 20; -fx-margin: 10 0 0 0;">
+                <HBox alignment="CENTER_RIGHT" spacing="10">
+                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#showAddCrew" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #e6eaff; -fx-text-fill: #6a4df4; -fx-background-radius: 16;" text="Cancel" />
+                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleAssign" prefHeight="49.0" prefWidth="131.0" style="-fx-background-color: #6a4df4; -fx-text-fill: white; -fx-background-radius: 16;" text="Assign Crew to Flight" />
+                </HBox>
+            </VBox>
+            <!-- Assigned Crew Table -->
+            <VBox spacing="20" style="-fx-padding: 20 0 0 0;">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Assigned Crew" />
+                <TableView fx:id="assignedCrewTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="assignmentIdColumn" text="Assignment ID" />
+                        <TableColumn fx:id="crewIdColumn" text="Crew ID" />
+                        <TableColumn fx:id="nameColumn" text="Name" />
+                        <TableColumn fx:id="designationColumn" text="Designation" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </VBox>
+   </right>
+</BorderPane>

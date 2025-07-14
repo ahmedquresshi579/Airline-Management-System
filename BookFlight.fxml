@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="689.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BookFlightController">
+    <left>
+        <VBox prefWidth="220" style="-fx-background-color: #2d2f4a; -fx-padding: 20;">
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20 0 10 0;">
+                <StackPane style="-fx-background-color: #6a4df4; -fx-background-radius: 16; -fx-padding: 16;">
+                    <VBox alignment="CENTER" spacing="6">
+                        <Label style="-fx-font-size: 32px; -fx-text-fill: white;" text="👤" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="SkyTrack" />
+                    </VBox>
+                </StackPane>
+            </VBox>
+            <VBox spacing="8" style="-fx-padding: 0 0 0 0;">
+                <Button onAction="#showHome" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🏠" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="Home" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showBookFlight" style="-fx-background-color: #fff;" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="299.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #2d2f4a;" text="✈" />
+                            <Label style="-fx-text-fill: #2d2f4a; -fx-font-size: 14px; -fx-font-weight: bold;" text="Book Flight" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showMyBookings" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="294.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="🎫" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="My Bookings" />
+                        </VBox>
+                    </graphic>
+                </Button>
+                <Button onAction="#showProfile" styleClass="sidebar-btn">
+                    <graphic>
+                        <VBox alignment="CENTER" prefHeight="54.0" prefWidth="270.0" spacing="2">
+                            <Label style="-fx-font-size: 22px; -fx-text-fill: #fff;" text="👤" />
+                            <Label style="-fx-text-fill: #fff; -fx-font-size: 14px;" text="My Profile" />
+                        </VBox>
+                    </graphic>
+                </Button>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" style="-fx-padding: 30 0 0 0;" />
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="623.0" prefWidth="585.0" style="-fx-background-color:transparent;">
+            <VBox prefHeight="621.0" prefWidth="717.0" spacing="20" style="-fx-background-color: #f7f8fa; -fx-padding: 30;">
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Book a Flight" />
+                
+                <!-- Search Form -->
+                <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 16;">
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Search Flights" />
+                    <GridPane hgap="20" vgap="15">
+                        <padding><Insets bottom="10" left="10" right="10" top="10" /></padding>
+                        <Label text="From:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <ComboBox fx:id="fromAirportCombo" prefWidth="200" promptText="Select Airport" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="To:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="toAirportCombo" prefWidth="200" promptText="Select Airport" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="flightDatePicker" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#handleSearch" styleClass="primary-btn" text="Search Flights" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                        <columnConstraints>
+                            <ColumnConstraints />
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
+                    </GridPane>
+                </VBox>
+
+                <!-- Search Results -->
+                <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 16;">
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2d2f4a;" text="Available Flights" />
+                    <ScrollPane fitToWidth="false" fitToHeight="true" prefHeight="300">
+                        <content>
+                            <TableView fx:id="flightsTable" prefHeight="300">
+                                <columns>
+                                    <TableColumn fx:id="flightIdColumn" text="Flight ID" prefWidth="100" />
+                                    <TableColumn fx:id="departureColumn" text="Departure" prefWidth="150" />
+                                    <TableColumn fx:id="arrivalColumn" text="Arrival" prefWidth="150" />
+                                    <TableColumn fx:id="timeColumn" text="Departure Time" prefWidth="150" />
+                                    <TableColumn fx:id="modelColumn" text="Aircraft Model" prefWidth="150" />
+                                    <TableColumn fx:id="capacityColumn" text="Capacity" prefWidth="100" />
+                                    <TableColumn fx:id="priceColumn" text="Price" prefWidth="100" />
+                                    <TableColumn fx:id="actionColumn" text="Action" prefWidth="120" />
+                                </columns>
+                            </TableView>
+                        </content>
+                    </ScrollPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+    <top>
+        <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #fff; -fx-padding: 10 30 10 0;">
+            <TextField fx:id="globalSearchField" promptText="Search..." style="-fx-pref-width: 220; -fx-background-radius: 16; -fx-border-radius: 16; -fx-border-color: #e6eaff; -fx-background-color: #f7f8fa;" />
+            <Button fx:id="settingsButton" style="-fx-background-color: transparent; -fx-font-size: 18px; -fx-text-fill: #6a4df4;" text="⚙" />
+            <Button onAction="#handleSignOut" style="-fx-background-color: #ff5c5c; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 16; -fx-padding: 8 24;" text="Sign Out" />
+        </HBox>
+    </top>
+</BorderPane>
